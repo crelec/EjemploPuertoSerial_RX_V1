@@ -22,12 +22,7 @@ int main()
 {
     hilo_rx_serie.start(rx_serie);
     serial_port.write("Arranque programa.\n\r",21);
-
-   /* for (int i=0; i<22;i++) //Borro arreglo del mensaje de salida
-        {
-        men_out[i] = NULL;
-        }
-    */
+   
     while (true) {
     miled=!miled;
     ThisThread::sleep_for(BLINKING_RATE);
