@@ -14,25 +14,23 @@ Thread hilo_rx_serie;
 
 void rx_serie(void);
 
-char men_out[21];
+//char men_out[21];
 char men_in[9];
 
 // main() runs in its own thread in the OS
 int main()
 {
     hilo_rx_serie.start(rx_serie);
-    sprintf(men_out, "Arranque programa.\n\r");
-    serial_port.write(men_out,20);
+    serial_port.write("Arranque programa.\n\r",21);
 
-    for (int i=0; i<22;i++) //Borro arreglo del mensaje de salida
+   /* for (int i=0; i<22;i++) //Borro arreglo del mensaje de salida
         {
         men_out[i] = NULL;
         }
-    
+    */
     while (true) {
     miled=!miled;
     ThisThread::sleep_for(BLINKING_RATE);
-
     }
 }
 
